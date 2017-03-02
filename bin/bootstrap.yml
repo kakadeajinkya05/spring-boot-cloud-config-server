@@ -1,0 +1,22 @@
+server:
+  port: 8888
+ 
+spring:
+  application:
+    name: configuration-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ositechportal/recruit-config-repo
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discoveryUser:passwordDiscovery@localhost:8761/eureka/
+
+security:
+ basic:
+    enabled: true
+ user:
+  name: configUser
+  password: configPassword
