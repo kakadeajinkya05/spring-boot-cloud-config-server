@@ -1,5 +1,5 @@
 # spring-boot-cloud-config-server
 
-   Check properties from git repos 
+   URL to check properties from git repos 
 		
-		http://localhost:8888/reservation/default
+	http://localhost:8888/reservation/default
