@@ -6,13 +6,18 @@ spring:
     name: configuration-service
   cloud:
     config:
+      fail-fast: true
       server:
         git:
-          uri: https://github.com/ositechportal/recruit-config-repo
-eureka:
-  client:
-    service-url:
-      defaultZone: http://discoveryUser:passwordDiscovery@localhost:8761/eureka/
+          uri: https://github.com/kakadeajinkya05/configs
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://discoveryUser:passwordDiscovery@localhost:8761/eureka/
+
+management:
+  security:
+    enabled: true
 
 security:
  basic:
@@ -20,3 +25,4 @@ security:
  user:
   name: configUser
   password: configPassword
+  

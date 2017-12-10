@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '1.5.1.RELEASE'
+		springBootVersion = '1.5.9.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -11,6 +11,7 @@ buildscript {
 }
 
 apply plugin: 'java'
+apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
@@ -27,14 +28,17 @@ repositories {
 	maven { url "https://repo.spring.io/milestone" }
 }
 
+ext {
+	springCloudVersion = 'Edgware.RELEASE'
+}
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-actuator')
 	compile('org.springframework.cloud:spring-cloud-config-server')
-	compile('org.springframework.cloud:spring-cloud-starter-eureka')
+//	compile('org.springframework.cloud:spring-cloud-starter-eureka')
 	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.springframework.cloud:spring-cloud-starter-oauth2')
-	compile('org.springframework.cloud:spring-cloud-starter-security')
+//	compile('org.springframework.cloud:spring-cloud-starter-oauth2')
+//	compile('org.springframework.cloud:spring-cloud-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-security')
 	runtime('org.springframework.boot:spring-boot-devtools')
 	compileOnly('org.projectlombok:lombok')
@@ -43,6 +47,6 @@ dependencies {
 
 dependencyManagement {
 	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:Dalston.BUILD-SNAPSHOT"
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
 	}
 }
